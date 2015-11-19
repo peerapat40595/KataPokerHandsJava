@@ -232,10 +232,10 @@ public class PokerHand {
 	}
 	
 	public boolean isWinRank(PokerHand opponentHand){
-		if(handRankValue > opponentHand.handRankValue){
+		if(handRankValue < opponentHand.handRankValue){
 			return true;
 		}
-		if(handRankValue < opponentHand.handRankValue){
+		if(handRankValue > opponentHand.handRankValue){
 			return false;
 		}
 		return false;
@@ -255,6 +255,22 @@ public class PokerHand {
 			return WinCardRankList(OneCardRank, opponentHand.OneCardRank);
 		}
 		return 0;//Tie
+	}
+	
+	public String WinCardRankCount(PokerHand opponentHand){
+		if(WinCardRankList(FourCardRank, opponentHand.FourCardRank)!=0){
+			return "Four cards of";
+		}
+		if(WinCardRankList(ThreeCardRank, opponentHand.ThreeCardRank)!=0){
+			return "Three cards of";
+		}
+		if(WinCardRankList(TwoCardRank, opponentHand.TwoCardRank)!=0){
+			return "Two cards of";
+		}
+		if(WinCardRankList(OneCardRank, opponentHand.OneCardRank)!=0){
+			return "High";
+		}
+		return "";//Tie
 	}
 	
 	private int WinCardRankList(List<Integer> CardRank1,List<Integer> CardRank2){

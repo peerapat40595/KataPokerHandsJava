@@ -27,10 +27,10 @@ public class main {
 		} 
 		//Same Hand Rank Find Win Card Rank
 		else if(Player1Hand.WinCardRank(Player2Hand) > 0){
-			System.out.println("Black wins. - with " + Player1Hand.getHandRank() + ": " + convertToString(Player1Hand.WinCardRank(Player2Hand)));
+			System.out.println("Black wins. - with " + Player1Hand.getHandRank() + ": " + Player1Hand.WinCardRankCount(Player2Hand) + " " + convertToString(Player1Hand.WinCardRank(Player2Hand)));
 		}
 		else if(Player2Hand.WinCardRank(Player1Hand) > 0){
-			System.out.println("White wins. - with " + Player2Hand.getHandRank() + ": " + convertToString(Player2Hand.WinCardRank(Player1Hand)));
+			System.out.println("White wins. - with " + Player2Hand.getHandRank() + ": " + Player2Hand.WinCardRankCount(Player1Hand) + " " + convertToString(Player2Hand.WinCardRank(Player1Hand)));
 		}
 		else {
 			System.out.println("Tie.");
